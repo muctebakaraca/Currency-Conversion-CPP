@@ -1,0 +1,38 @@
+/*
+    The purpose of this program is to provide the utility, to the user, of inputting a USD amount and 
+    conveniently seeing the corresponding amount in different common currencies such as Canadian dollars, 
+    Mexican Pesos, and British Pounds.
+*/
+
+// Code used to include the Input/Output library as well as CMATH and IO Manipulation and also IOStream
+// It also uses the standard namespace.
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+
+// The main function of the program.
+int main()
+{
+    // Declaring constants for the conversion factors and also the final variables.
+    const double CAD = 1.35, Peso = 18.36, lbs = .829;
+    double USD, Canada, Mexico, Britain;
+
+    // Takes as input from the user a USD amount to be converted.
+    cout << "Enter an amount in US dollars: ";
+    cin >> USD;
+    
+    // Calculates the conversions using the constant conversion factors.
+    Canada = USD * CAD;
+    Mexico = USD * Peso;
+    Britain =  USD * lbs;
+
+    // Neatly formats and displays the conversions using requested formatting.
+    cout << setprecision(2) << fixed;
+    cout << endl;
+    cout << setw(12) << right << "Dollars" << "\t" << setw(12) << right << "CAD" << "\t" << setw(12) << right << "Pesos" << "\t" << setw(12) << right << "GBP" << endl;
+    cout << setw(12) << right << USD << "\t" << setw(12) << right << Canada << "\t" << setw(12) << right << Mexico << "\t" << setw(12) << right<< Britain << endl;
+
+    // Returns 0 per convention.
+    return 0;
+}
